@@ -1,4 +1,6 @@
 <script>
+	export const prerender = true;
+	
 	import { base } from '$app/paths';
 	// import favicon from '$lib/assets/favicon.svg';
 
