@@ -1,0 +1,1 @@
+import{q as o,g as a,f as e,t as c,i as l}from"./OGXw-Z8e.js";function i(n){e===null&&o(),c&&e.l!==null?u(e).m.push(n):a(()=>{const t=l(n);if(typeof t=="function")return t})}function u(n){var t=n.l;return t.u??={a:[],b:[],m:[]}}export{i as o};
