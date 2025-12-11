@@ -1,8 +1,11 @@
 <script>
-    import { page } from '$app/stores';
+	import { page } from '$app/stores';
+	import { browser } from '$app/environment';
 
-    // automatically update when query params change
-    $: params = Object.fromEntries($page.url.searchParams.entries());
+	// Only evaluate in the browser, never during prerender
+	$: params = browser
+		? Object.fromEntries($page.url.searchParams.entries())
+		: {};
 
     console.log(params)
 </script>
