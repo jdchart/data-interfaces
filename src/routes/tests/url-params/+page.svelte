@@ -1,22 +1,27 @@
 <script>
-	import { page } from '$app/stores';
-	import { browser } from '$app/environment';
+    import { onMount } from 'svelte';
+    import { get_url_params } from '$lib/scripts/urls';
 
+    let params = {};
+    let json_data = {};
 
-    let params = {}
-    $: if(browser){
-        params = Object.fromEntries($page.url.searchParams.entries());
-        console.log(params);
+    onMount(() => {
+        params = get_url_params();
+        console.log("Params:", params);
 
-        // Load the json:
-        if (params) {
-            fetch(params["json"])
-            .then(r => r.json())
-            .then(data => {
-                console.log(data);
-            });
+        if (params.json) {
+            fetch(params.json)
+                .then(r => r.json())
+                .then(data => {
+                    json_data = data;
+                    console.log("JSON data fetched:", json_data);
+                })
+                .catch(err => console.error("Error fetching JSON:", err));
+        } else {
+            console.log("No json found");
         }
-    };
+    });
 </script>
 
 <pre>{JSON.stringify(params, null, 2)}</pre>
+<pre>{JSON.stringify(json_data, null, 2)}</pre>
