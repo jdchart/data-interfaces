@@ -1,12 +1,5 @@
-export function get_url_params(url) {
-    const params = Object.fromEntries(url.searchParams.entries());
-    return params;
-}
+import { browser } from '$app/environment';
 
-// $: if (jsonUrl) {
-//             fetch(jsonUrl)
-//             .then(r => r.json())
-//             .then(data => {
-//                 ret[param_list[i]] = data
-//             });
-//         }
+export function get_url_params(page){
+    if(browser){return Object.fromEntries($page.url.searchParams.entries());};
+};

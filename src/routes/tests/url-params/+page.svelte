@@ -2,12 +2,21 @@
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
 
-	// Only evaluate in the browser, never during prerender
-	$: params = browser
-		? Object.fromEntries($page.url.searchParams.entries())
-		: {};
 
-    console.log(params)
+    let params = {}
+    $: if(browser){
+        params = Object.fromEntries($page.url.searchParams.entries());
+        console.log(params);
+
+        // Load the json:
+        if (params) {
+            fetch(params["json"])
+            .then(r => r.json())
+            .then(data => {
+                console.log(data);
+            });
+        }
+    };
 </script>
 
 <pre>{JSON.stringify(params, null, 2)}</pre>
