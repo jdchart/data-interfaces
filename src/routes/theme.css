@@ -1,0 +1,49 @@
+@font-face {font-family: 'Input-Mono-Narrow';src: url('/fonts/Input Mono Narrow/InputMonoNarrow-Regular.ttf')}
+@font-face {font-family: 'Input-Mono-Narrow-Thin';src: url('/fonts/Input Mono Narrow/InputMonoNarrow-Thin.ttf')}
+@font-face {font-family: 'Steinbeck';src: url('/fonts/steinbeck/SteinbeckItalic.woff')}
+
+:root {
+    --background-color-1: white;
+	--background-color-2: rgb(235, 235, 235);
+	--primary-text: black;
+	--secondary-text: grey;
+	--big-button-background-color : black;
+	--big-button-background-color-hover : grey;
+	--big-button-label-color : white;
+}
+
+body{
+	font-family: 'Input-Mono-Narrow-Thin', monospace;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	overflow: auto;
+}
+
+footer{
+	box-sizing: border-box;
+}
+
+div, h1, h2, h3{
+	box-sizing: border-box;
+	font-family: 'Steinbeck', monospace;
+	font-size: larger;
+}
+
+p{
+	font-family: 'Input-Mono-Narrow-Thin', monospace;
+}
+
+.p_gloabl_wrap{
+	font-size: 0.4em;
+    color: var(--secondary-text);
+	font-family: 'Input-Mono-Narrow-Thin', monospace;
+	padding-bottom: 1em;
+}
+
+.p_gloabl_wrap a{
+	color: var(--secondary-text);
+	font-family: 'Input-Mono-Narrow-Thin', monospace;
+	font-style: normal;
+}
