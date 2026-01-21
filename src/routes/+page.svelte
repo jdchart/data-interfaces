@@ -13,6 +13,10 @@
 <div class="cont">
     <h1>Data interfaces</h1>
     <p>A collection of live js-driven data visualization interfaces created by Jacob Hart. They can be used as standalone webpages, or embedded within an interface like an ipynb in order to visualize and interact with results of various proceses.</p>
+
+    <div class="interface-links">
+        <a href="{base}/sound-plot-single">Single file sound plot</a>
+    </div>
 </div>
 
 <Footer />
@@ -33,5 +37,9 @@
 
     p{
         font-size: smaller;
+    }
+
+    .interface-links{
+        margin-top: 1em;
     }
 </style>
