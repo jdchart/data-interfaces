@@ -1,15 +1,20 @@
 import adapter from '@sveltejs/adapter-static';
-
-export default {
-  kit: {
-	prerender: {
-    	entries: ['*']
-    },
-	adapter: adapter({
-		fallback: 'index.html' // may differ from host to host
-	}),
-    paths: {
-      base: process.env.NODE_ENV === "production" ? "/data-interfaces" : ""
+// import {
+//     vitePreprocess
+// } from '@sveltejs/kit/vite';
+ 
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+    // preprocess: vitePreprocess(),
+ 
+    kit: {
+        adapter: adapter({
+			fallback: '200.html' // may differ from host to host
+		}),
+		paths : {
+			base: process.env.NODE_ENV === 'production' ? '/sveltekit-github-pages' : '',
+		}
     }
-  }
 };
+ 
+export default config;
