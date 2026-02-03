@@ -17,6 +17,19 @@
     <div class="interface-links">
         <a href="{base}/sound-plot-single">Single file sound plot</a>
     </div>
+
+    <div class="IIIF-sota-div">
+        <h2>IIIF State of the art</h2>
+        <ul>
+            <li><a href="{base}/iiif-sota/sota-scatter-plot?plot={base}/data/iiif-sota/academic_field-embeddings.json">Academic field</a></li>
+            <li><a href="{base}/iiif-sota/sota-scatter-plot?plot={base}/data/iiif-sota/access_governance-embeddings.json">Access governance</a></li>
+            <li><a href="{base}/iiif-sota/sota-scatter-plot?plot={base}/data/iiif-sota/annotation_modalities-embeddings.json">Annotation modalities</a></li>
+            <li><a href="{base}/iiif-sota/sota-scatter-plot?plot={base}/data/iiif-sota/authors_institutions-embeddings.json">Authors' institutions</a></li>
+            <li><a href="{base}/iiif-sota/sota-scatter-plot?plot={base}/data/iiif-sota/iiif_usage-embeddings.json">IIIF Usage</a></li>
+            <li><a href="{base}/iiif-sota/sota-scatter-plot?plot={base}/data/iiif-sota/media_formats-embeddings.json">Media formats</a></li>
+            <li><a href="{base}/iiif-sota/sota-scatter-plot?plot={base}/data/iiif-sota/target_audience-embeddings.json">Target audience</a></li>
+        </ul>
+    </div>
 </div>
 
 <Footer />
@@ -41,5 +54,13 @@
 
     .interface-links{
         margin-top: 1em;
+    }
+
+    .IIIF-sota-div{
+        margin-top: 1em;
+    }
+    .IIIF-sota-div ul{
+        margin-top: 1em;
+        margin-left: 1em;
     }
 </style>

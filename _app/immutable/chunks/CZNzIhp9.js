@@ -1,0 +1,1 @@
+import{s as t}from"./CkAjf3wP.js";const a=()=>{const s=t;return{page:{subscribe:s.page.subscribe},navigating:{subscribe:s.navigating.subscribe},updated:s.updated}},b={subscribe(s){return a().page.subscribe(s)}};function n(){{let s;return b.subscribe(r=>{s=Object.fromEntries(r.url.searchParams.entries())})(),s}}export{n as g};
