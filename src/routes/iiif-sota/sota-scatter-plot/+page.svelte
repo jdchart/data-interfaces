@@ -5,6 +5,8 @@
     import { onMount } from 'svelte';
     import { get_url_params } from '$lib/scripts/urls';
 
+    let unique_selected_agregate = [];
+
     let params = {};
     let json_data = {};
     let scaller_el;
@@ -42,8 +44,17 @@
 
     async function handleSelection(points) {
         selectedPoints = points;
-        console.log("Selected points:", points);
-        // You can also trigger async functions here
+        //console.log("Selected points:", points);
+        
+        unique_selected_agregate = [];
+        selectedPoints.forEach(point => {
+            point.uuids.forEach(uuid => {
+                if(unique_selected_agregate.includes(uuid) == false){
+                    unique_selected_agregate.push(uuid);
+                };
+            });
+        });
+        console.log(unique_selected_agregate);
     }
 </script>
 
@@ -63,6 +74,7 @@
     <div class="controls_row">
         <div class="control_wrapper cw_l">
             <h2>Selection</h2>
+            <p>Number of unique selected items: {unique_selected_agregate.length}</p>
             <ul>
             {#each selectedPoints as p}
                 <li>- {p.word} (count: {p.count})</li>
@@ -169,6 +181,11 @@
 
     .control_wrapper li{
         font-size: 0.4em;
+        color: var(--secondary-text);
+    }
+    .control_wrapper p{
+        font-size: 0.4em;
+        padding-top: 0.5em;
     }
 
     .items_list{
